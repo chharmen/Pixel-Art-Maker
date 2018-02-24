@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Pixel Art Maker</title>
+  <link rel="stylesheet" href="styles.css"> <!-- css stylesheet -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> <!-- jQuery 3.2.1 - este codigo se saca del google hosted libraries y se tiene que pegar ANTES que el de JS! -->
+  <script type="text/javascript "src="disenio-.js"></script> <!--JS doc -->
+  <link href="https://fonts.googleapis.com/css?family=Acme|BioRhyme+Expanded|Lobster" rel="stylesheet"> <!--fonts -->
+</head>
+<body>
+    <h1 class="titulo">lab: Pixel Art Maker</h1>
+
+  <div class="forma-grid">
+    <h3>Choose Grid Size</h3>
+  <form id="create-the-grid">
+    <p>grid width</p>
+    <!--grid width - indico que se puede poner un numero y que tiene un número limite de 50 para que no me haga crash la pag -->
+    <input type="number" min="1" max="50" name="grid-width" id="grid-width" placeholder="1">
+    <!--grid-heigth -->
+    <p>grid heigth</p>
+    <input type="number" min="1" max="100" name="grid-heigth" id="grid-heigth" placeholder="1">
+    <!-- make the button and runs the function makeGrid when clicked-->
+    <button type="button" id="submit-button" onclick="makeGrid()">Submit</button>
+  </form>
+  </div>
+
+  <div class="pick-a-color">
+    <h3>Pick a color</h3>
+    <input type="color" id="color">
+  </div>
+
+  <div class="grid">
+    <h3>Design Canvas</h3>
+    <table id="designCanvas"></table>
+    <p>Click in the cells to paint after choosing the grid Size - and HAVE FUN!</p>
+  </div>
