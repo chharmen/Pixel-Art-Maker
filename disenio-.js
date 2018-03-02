@@ -1,5 +1,5 @@
 $(function(){
-  let submitButton = $('#submit-button').on( 'click', makeGrid );
+  $('#submit-button').on( 'click', function makeGrid() {
       // store values from user
       let gridHeigth = document.getElementById('grid-heigth').value;
       let gridWidth = $('#grid-width').val();    // question: is there any difference between this both?
@@ -22,4 +22,5 @@ $(function(){
     $('body').on('Click' , 'td' , function() {
       let color = document.getElementById('color').value;
       $(this).css('background-color' , color);
-    });
+    })
+  });
