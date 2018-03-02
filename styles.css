@@ -45,3 +45,7 @@ h3 {
 p{
   font-family: 'Acme', sans-serif;
 }
+
+.grid-cell{
+  border: 2px;
+}
