@@ -1,26 +1,32 @@
-$(function(){
-  $('#submit-button').on( 'click', function makeGrid() {
-      // store values from user
-      let gridHeigth = document.getElementById('grid-heigth').value;
-      let gridWidth = $('#grid-width').val();    // question: is there any difference between this both?
-      let table = document.getElementById('designCanvas');
-       // code to create table:
-       table.innerHTML = '';
-       let tbody = document.createElement('tbody');
-          for (let i = 0; i < gridHeigth; i++) {
-            let tr = document.createElement('tr');
-            for (let h = 0; i < gridWidth; h++) {
-              let td = document.createElement('td');
-              td.className = 'grid-cell';
-      tr.appendChild(td);
+
+  $(function () {
+  function makeGrid() {
+    // Let us jQuery methods since we are already downloading jQuery.
+    const gridHeigth = $('#grid-heigth').val(); // con JS seria: let gridHeigth = document.getElementById('grid-heigth').value;
+    const gridWidth = $('#grid-width').val();
+    const table = $('#designCanvas');
+    table.html(''); // Easy way to clear element using jQuery.
+    const tBody = $('<tbody>'); // Easy way to create elements using jQuery. - con JS seria: let tbody = document.createElement('tbody');
+    // Create height number of rows
+    for (let i = 0; i < gridHeigth; i++) {
+      const tr = $('<tr>'); // con js seria: let tr = document.createElement('tr');
+      // Create width number of cells
+      for (let j = 0; j < gridWidth; j++) {
+        const td = $('<td>');
+        td.addClass('grid-cell'); // Easy way to add class using jQuery - creo que JS seria td.className = 'grid-cell';
+        tr.append(td); // Easy way to append elements
+      }
+      tBody.append(tr);
     }
-    tbody.appendChild(tr);
-    }
-    table.appendChild(tbody);
-  })
-    // To change the color of cell when clicked:
-    $('body').on('Click' , 'td' , function() {
-      let color = document.getElementById('color').value;
-      $(this).css('background-color' , color);
-    })
-  });
+    table.append(tBody);
+  }
+
+  // Easy way to use onclick
+  $('#submit-button').click(makeGrid);
+});
+function colorGrid(){
+  const color = $('#color').val();
+  table.click( 'td');
+  $(this).css('background-color' , color);
+  table.click
+};
