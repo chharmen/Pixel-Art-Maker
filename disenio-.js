@@ -24,7 +24,7 @@
   // Easy way to use onclick
   $('#submit-button').click(makeGrid);
 });
-$('.grid-cell').on("click", function colorGrid() {
+$('.grid-cell').on('click', 'td', function colorGrid() {
     //select picked color and store it
     let color = $("#color").val();
     // fill only clicked cell with selected color
