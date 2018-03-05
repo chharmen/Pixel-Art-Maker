@@ -1,7 +1,5 @@
-
-  $(function () {
+$(function () {
   function makeGrid() {
-    // Let us jQuery methods since we are already downloading jQuery.
     const gridHeigth = $('#grid-heigth').val(); // con JS seria: let gridHeigth = document.getElementById('grid-heigth').value;
     const gridWidth = $('#grid-width').val();
     const table = $('#designCanvas');
@@ -19,14 +17,13 @@
       tBody.append(tr);
     }
     table.append(tBody);
+    $('.grid-cell').on('click', function colorGrid() {
+        //select picked color and store it
+        let color = $("#color").val();
+        // fill only clicked cell with selected color
+        $(this).css({ "background-color": color });
+    });
   }
-
   // Easy way to use onclick
   $('#submit-button').click(makeGrid);
-});
-$('.grid-cell').on('click', 'td', function colorGrid() {
-    //select picked color and store it
-    let color = $("#color").val();
-    // fill only clicked cell with selected color
-    $(this).css("background-color", color);
 });
